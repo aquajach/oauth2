@@ -23,7 +23,7 @@ module OAuth2
     end
 
     def request(verb, path, params = {}, headers = {})
-      params = params.merge token_param => @token
+      #params = params.merge token_param => @token
       headers = headers.merge 'Authorization' => "OAuth #{@token}"
       @client.request(verb, path, params, headers)
     end
